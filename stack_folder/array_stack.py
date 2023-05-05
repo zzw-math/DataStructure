@@ -8,7 +8,6 @@ class ArrayStack:
     def __init__(self):
         self._data = [None] * self.DEFAULT_CAPACITY
         self._size = 0
-        self._top = -1
 
     def __len__(self):
         return self._size
@@ -31,7 +30,7 @@ class ArrayStack:
     def top(self):
         if self.is_empty():
             raise Empty('Stack is empty!')
-        return self._data[self._top]
+        return self._data[self._size - 1]
 
     def is_empty(self):
         return self._size == 0
@@ -40,3 +39,12 @@ class ArrayStack:
         return f'{self._data[:self._size]}'
 
 
+if __name__ == '__main__':
+    s = ArrayStack()
+    print(s.is_empty())
+    s.push(1)
+    print(s.is_empty())
+    s.push(2)
+    print(s, s.top())
+    s.pop()
+    print(s, s.top())
