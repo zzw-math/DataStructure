@@ -53,8 +53,8 @@ class ArrayDeque():
 
     def _resize(self, cap):
         old = self._data
-        self._data = [None] * cap
-        self._data = [x for x in self._data[self._front:]+self._data[:self._front] if x != None]
+        temp = [x for x in self._data[self._front:]+self._data[:self._front] if x != None]
+        self._data = temp + [None] * (cap - len(self._data))
         self._front = 0
 
     def __str__(self):
