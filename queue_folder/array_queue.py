@@ -50,12 +50,6 @@ class ArrayQueue:
             walk = (1 + walk) % len(old)
         self._front = 0
 
-    def _myresize(self, cap):
-        old = self._data
-        self._data = [None] * cap
-        self._data = [x for x in self._data[self._front:] + self._data[:self._front] if x != None]
-        self._front = 0
-
     def __str__(self):
         return f'{[x for x in self._data[self._front:] + self._data[:self._front] if x != None]}'
 
