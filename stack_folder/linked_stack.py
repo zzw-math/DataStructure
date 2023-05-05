@@ -63,3 +63,10 @@ class LinkedStack:
 
 if __name__ == '__main__':
     q = LinkedStack()
+    print(q.is_empty())
+    q.push(1)
+    print(q.is_empty())
+    q.push(2)
+    print(q, q.top())
+    q.pop()
+    print(q, q.top())
