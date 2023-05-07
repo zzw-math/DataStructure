@@ -1,9 +1,9 @@
 from queue_folder.linked_queue import LinkedQueue
 
 
-class Tree():
+class Tree:
 
-    class Position():
+    class Position:
 
         def elem(self):
             raise NotImplementedError('must be implemented by subclass')
